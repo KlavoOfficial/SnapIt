@@ -5,7 +5,18 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: 'purple',
+          'dark': '#6a0dad',
+        },
+        secondary: {
+          DEFAULT: '#FFBF34',
+          'hover': '#ffb71a',
+        },
+      }
+    },
   },
   plugins: [],
 }

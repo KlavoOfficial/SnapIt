@@ -12,41 +12,39 @@ function Navbar() {
   };
 
   return (
-    <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 navbar">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-name">Snap It</span>
-          </Link>
+    <nav className="bg-primary fixed w-full z-20 top-0 start-0 border-b border-purple-700 shadow-lg">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <span className="self-center text-2xl font-black whitespace-nowrap text-secondary">Snap It</span>
+        </Link>
 
-          <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            {user ? (
-              <>
-                <span className="text-white mr-4">Hi, {user.name}</span>
-                <button onClick={handleLogout} type="button" className="nav-btn py-2.5 px-5 text-sm font-medium">Logout</button>
-                {user.role === 'admin' && (
-                  <button onClick={() => navigate('/admin/dashboard')} type="button" className="nav-btn py-2.5 px-5 ml-2 text-sm font-medium">Admin Panel</button>
-                )}
-              </>
-            ) : (
-              <>
-                <button onClick={() => navigate('/login')} type="button" className="nav-btn py-2.5 px-5 text-sm font-medium">Sign in</button>
-                <button onClick={() => navigate('/signup')} type="button" className="nav-btn py-2.5 px-5 ml-2 text-sm font-medium">Register</button>
-              </>
-            )}
-          </div>
-          
-          <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border navbar-menu border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900">
-              <li><Link to="/" className="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0">Home</Link></li>
-              <li><a href="#services" className="block py-2 px-3 text-white rounded-sm md:p-0">Services</a></li>
-              <li><a href="#about" className="block py-2 px-3 text-white rounded-sm md:p-0">About Us</a></li>
-              <li><a href="#products" className="block py-2 px-3 text-white rounded-sm md:p-0">Products</a></li>
-            </ul>
-          </div>
+        <div className="flex items-center md:order-2 space-x-2 md:space-x-3 rtl:space-x-reverse">
+          {user ? (
+            <>
+              <span className="text-white hidden sm:inline">Hi, {user.name}</span>
+              {user.role === 'admin' && (
+                <button onClick={() => navigate('/admin/dashboard')} type="button" className="text-primary bg-white hover:bg-gray-200 font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Admin Panel</button>
+              )}
+              <button onClick={handleLogout} type="button" className="text-primary bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Logout</button>
+            </>
+          ) : (
+            <>
+              <button onClick={() => navigate('/login')} type="button" className="text-white hover:bg-purple-800 font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors">Sign in</button>
+              <button onClick={() => navigate('/signup')} type="button" className="text-primary bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Register</button>
+            </>
+          )}
         </div>
-      </nav>
-    </>
+        
+        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-default">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-700 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+            <li><Link to="/" className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-secondary transition-colors">Home</Link></li>
+            <li><a href="#about" className="block py-2 px-3 text-white rounded md:p-0 hover:text-secondary transition-colors">About Us</a></li>
+            <li><a href="#services" className="block py-2 px-3 text-white rounded md:p-0 hover:text-secondary transition-colors">Services</a></li>
+            <li><a href="#products" className="block py-2 px-3 text-white rounded md:p-0 hover:text-secondary transition-colors">Products</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
 

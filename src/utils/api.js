@@ -50,6 +50,19 @@ export const authAPI = {
   getProfile: () => apiCall('/users/profile'),
 };
 
+// PRODUCT API CALLS
+export const productAPI = {
+  getProducts: (filters = {}) => {
+    const queryParams = new URLSearchParams(filters);
+    return apiCall(`/products?${queryParams}`);
+  },
+
+  getProduct: (id) => apiCall(`/products/${id}`),
+
+  getCategories: () => apiCall('/products/categories'),
+};
+
+
 // ADMIN API CALLS
 export const adminAPI = {
   getDashboard: () => apiCall('/admin/dashboard'),

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 function AdminLogin() {
-  const [loginIdentifier, setLoginIdentifier] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginIdentifier, setLoginIdentifier] = useState('admin');
+  const [password, setPassword] = useState('admin123');
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -17,7 +17,6 @@ function AdminLogin() {
       if (data.success && data.data.user.role === 'admin') {
         navigate('/admin/dashboard');
       } else {
-        // Use the error from the backend if available, otherwise a generic one
         setError(data.message || 'Access denied. Not an admin user or invalid credentials.');
       }
     } catch (err) {
@@ -28,7 +27,7 @@ function AdminLogin() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center p-4">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold">Snap It Admin</h1>
+        <h1 className="text-5xl font-bold text-secondary">Snap It Admin</h1>
       </div>
       <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
         <h2 className="text-2xl font-bold mb-6 text-center">Admin Sign In</h2>
@@ -41,7 +40,7 @@ function AdminLogin() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="loginIdentifier" className="block text-sm font-medium text-gray-400 mb-2">Username</label>
+            <label htmlFor="loginIdentifier" className="block text-sm font-medium text-gray-400 mb-2">Username or Email</label>
             <input
               id="loginIdentifier"
               name="loginIdentifier"
@@ -49,7 +48,7 @@ function AdminLogin() {
               value={loginIdentifier}
               onChange={(e) => setLoginIdentifier(e.target.value)}
               required
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
               placeholder="admin"
             />
           </div>
@@ -62,14 +61,14 @@ function AdminLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
               placeholder="••••••••"
             />
           </div>
           <div>
             <button
               type="submit"
-              className="w-full bg-yellow-500 text-gray-900 font-bold py-2.5 px-4 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-yellow-500 transition-colors duration-200"
+              className="w-full bg-secondary text-primary font-bold py-2.5 px-4 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-secondary transition-colors duration-200"
             >
               Sign in
             </button>

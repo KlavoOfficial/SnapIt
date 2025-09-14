@@ -2,344 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar {
-    background-color: purple;
-    width: 100%;
-    height: 100px;
+html {
+  scroll-behavior: smooth;
 }
 
-.login-form {
-    background-color: #FFBF34;
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200;
 }
 
-.login-title {
-    color: white;
-    font-weight: 900;
-    font-size: 3vw;
-}
-
-.login-con {
-    background-color: purple;
-    border-radius: 12px;
-}
-
-.login-font {
-    color: white;
-}
-
-.btn-font {
-    color: purple;
-}
-
-.login-btn {
-    background-color: #FFBF34;
-    transition: 0.2s ease-in-out;
-}
-
-.login-btn:hover {
-    transform: scale(1.1);
-}
-
-.navbar-menu {
-    background-color: purple;
-}
-
-.nav-btn {
-    background-color: #FFBF34;
-    border: none;
-    color: white;
-    border-radius: 8px;
-}
-
-.logo-name {
-    color: rgb(255, 255, 255);
-}
-
-.navbar-menu ul li a {
-    color: white;
-}
-
-.navbar-menu ul li a:hover {
-    color: #FFBF34;
-}
-
-.container-1 {
-    height: 700px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #f2f2f2;
+.hero-section {
     background-image: url(./assets/main02.avif);
-}
-
-.heading h1 {
-    font-size: 12vw;
-    font-weight: 900;
-    text-decoration: underline;
-    margin-left: 52px;
-    color: white;
-}
-
-.heading p {
-    width: 700px;
-    margin-left: 59px;
-    font-size: 1.2vw;
-    font-weight: 700;
-    color: white;
-}
-
-.main-btn {
-    margin-left: 59px;
-    margin-top: 20px;
-    background-color: purple;
-    color: white;
-    font-weight: 700;
-    transition: 0.5s ease-in;
-}
-
-.main-btn:hover {
-    transform: scale(1.1);
-}
-
-.productlist {
-    background-color: purple;
-    height: 1100px;
-}
-
-.productlist section {
-    background-color: #FFBF34;
-    width: 80%;
-    margin-left: 150px;
-    margin-top: 30px;
-    border-radius: 12px;
-}
-
-.productlist section h2 {
-    color: white;
-}
-
-.productlist section .categories-grid a {
-    background-color: purple;
-    border: none;
-    transition: 0.2s ease-in-out;
-}
-
-.productlist section .categories-grid a:hover {
-    transform: scale(1.1);
-}
-
-.productlist section .categories-grid a span {
-    color: white;
-}
-
-.productlist section .categories-grid svg {
-    color: white;
-}
-
-.productlist section a {
-    color: white;
-}
-
-.g1 {
-    background-color: white;
-    height: 200px;
-    border-radius: 12px;
-}
-
-.g1 img {
-    width: 100%;
-    height: 200px;
-    border-radius: 12px;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-}
-
-.rating-box {
-    background-color: purple;
-    height: 900px;
-    padding: 20px;
-}
-
-.blockquote-con {
-    margin-top: 20px;
-    color: white;
-}
-
-.blockquote-con p {
-    font-size: 3vw;
-}
-
-.blog-sec {
-    margin-top: 50px;
-    background-color: #FFBF34;
-    border-radius: 12px;
-}
-
-.blog-title {
-    color: white;
-    font-weight: 900;
-    text-decoration: underline;
-}
-
-.blog-p {
-    color: white;
-    font-weight: 700;
-}
-
-.blog-grid article {
-    background-color: purple;
-    border-radius: 12px;
-    border: none;
-    transition: 0.2s ease-in-out;
-}
-
-.blog-grid article:hover {
-    transform: scale(1.1);
-}
-
-.blog-grid article h2 {
-    color: white;
-}
-
-.blog-grid article p {
-    color: white;
-}
-
-.blog-grid article span {
-    color: white;
-}
-
-.blog-grid article a {
-    color: white;
-}
-
-.about-con {
-    padding: 10px;
-    height: 1000px;
-    background-color: purple;
-}
-
-.about-con section {
-    background-color: #FFBF34;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-.about-con .about-font {
-    color: white;
-    font-weight: 900;
-}
-
-.about-con .about-btn {
-    background-color: #FFBF34;
-}
-
-.about-form {
-    transition: 0.2s ease-in-out;
-    background-color: purple;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-.about-form:hover {
-    transform: scale(1.1);
 }
 
 /* Admin Panel Styles */
 .admin-layout {
-  display: flex;
-  min-height: 100vh;
-  background-color: #4c1d95; /* Deeper purple */
+  @apply flex min-h-screen bg-purple-900;
 }
 
 .admin-sidebar {
-  width: 250px;
-  background-color: purple;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  color: white;
+  @apply w-64 bg-primary p-6 flex flex-col text-white;
 }
 
 .admin-logo {
-  font-size: 1.5rem;
-  font-weight: 900;
-  text-align: center;
-  margin-bottom: 2rem;
+  @apply text-2xl font-black text-center mb-8 text-secondary;
 }
 
 .admin-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  @apply flex flex-col gap-2;
 }
 
 .admin-nav a {
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+  @apply px-4 py-2 rounded-lg transition-colors duration-200 text-white/80 hover:bg-secondary hover:text-primary font-semibold;
 }
 
-.admin-nav a:hover, .admin-nav a.active {
-  background-color: #FFBF34;
-  color: purple;
+.admin-nav a.active {
+   @apply bg-secondary text-primary;
 }
 
 .admin-user-info {
-  margin-top: auto;
-  text-align: center;
+  @apply mt-auto text-center;
 }
 
 .admin-logout-btn {
-  background-color: #FFBF34;
-  color: purple;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  width: 100%;
+  @apply bg-secondary text-primary border-none px-4 py-2 rounded-lg mt-2 cursor-pointer w-full font-bold transition-transform hover:scale-105;
 }
 
 .admin-main-content {
-  flex-grow: 1;
-  padding: 2rem;
-  overflow-y: auto;
+  @apply flex-grow p-8 overflow-y-auto;
 }
 
 .admin-stat-card {
-  background-color: purple;
-  padding: 1.5rem;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  @apply bg-primary p-6 rounded-xl text-white shadow-lg;
 }
 
 .admin-card {
-  background-color: purple;
-  padding: 1.5rem;
-  border-radius: 12px;
-  color: white;
+  @apply bg-primary p-6 rounded-xl text-white shadow-lg;
 }
 
 .admin-th {
-  padding: 0.75rem;
-  text-align: left;
-  font-weight: 600;
-  border-bottom: 2px solid #FFBF34;
+  @apply p-3 text-left font-semibold border-b-2 border-secondary;
 }
 
 .admin-td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #6b21a8;
+  @apply p-3 border-b border-purple-700;
 }
 
 .admin-tr:last-child .admin-td {
-  border-bottom: none;
+  @apply border-b-0;
 }
 
-.status-pending { background-color: #f59e0b; color: white; }
-.status-confirmed { background-color: #10b981; color: white; }
-.status-shipped { background-color: #3b82f6; color: white; }
-.status-delivered { background-color: #84cc16; color: white; }
-.status-cancelled { background-color: #ef4444; color: white; }
+.status-pending { @apply bg-yellow-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
+.status-confirmed { @apply bg-green-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
+.status-processing { @apply bg-blue-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
+.status-shipped { @apply bg-indigo-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
+.status-delivered { @apply bg-lime-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
+.status-cancelled { @apply bg-red-500 text-white px-2 py-1 text-xs font-bold rounded-full; }
