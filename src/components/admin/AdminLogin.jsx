@@ -17,7 +17,8 @@ function AdminLogin() {
       if (data.success && data.data.user.role === 'admin') {
         navigate('/admin/dashboard');
       } else {
-        setError('Access denied. Not an admin user or invalid credentials.');
+        // Use the error from the backend if available, otherwise a generic one
+        setError(data.message || 'Access denied. Not an admin user or invalid credentials.');
       }
     } catch (err) {
       setError(err.message || 'Login failed. Please check your credentials.');
@@ -25,50 +26,57 @@ function AdminLogin() {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 login-form">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white login-title">
-          Snap It Admin
-        </a>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 login-con">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white login-font">
-              Admin Sign In
-            </h1>
-            {error && <p className="text-sm font-light text-red-400">{error}</p>}
-            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="loginIdentifier" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white login-font">Username</label>
-                <input
-                  type="text"
-                  name="loginIdentifier"
-                  id="loginIdentifier"
-                  value={loginIdentifier}
-                  onChange={(e) => setLoginIdentifier(e.target.value)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="admin"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white login-font">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                />
-              </div>
-              <button type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 login-btn btn-font">Sign in</button>
-            </form>
-          </div>
-        </div>
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center p-4">
+      <div className="text-center mb-8">
+        <h1 className="text-5xl font-bold">Snap It Admin</h1>
       </div>
-    </section>
+      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
+        <h2 className="text-2xl font-bold mb-6 text-center">Admin Sign In</h2>
+        
+        {error && 
+          <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-md p-3 mb-6 text-center" role="alert">
+            {error}
+          </div>
+        }
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="loginIdentifier" className="block text-sm font-medium text-gray-400 mb-2">Username</label>
+            <input
+              id="loginIdentifier"
+              name="loginIdentifier"
+              type="text"
+              value={loginIdentifier}
+              onChange={(e) => setLoginIdentifier(e.target.value)}
+              required
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+              placeholder="admin"
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-400 mb-2">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+              placeholder="••••••••"
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-yellow-500 text-gray-900 font-bold py-2.5 px-4 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-yellow-500 transition-colors duration-200"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
