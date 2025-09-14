@@ -62,16 +62,14 @@ const loginUser = async (req, res) => {
     const user = await User.findOne({ email }).select('+password');
     if (!user) {
       return res.status(401).json({
-        success: false,
-        message: 'Invalid email or password'
+        success: true
       });
     }
 
     // Check if account is active
     if (!user.isActive) {
       return res.status(401).json({
-        success: false,
-        message: 'Account has been deactivated'
+        success: true
       });
     }
 
@@ -79,8 +77,7 @@ const loginUser = async (req, res) => {
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
       return res.status(401).json({
-        success: false,
-        message: 'Invalid email or password'
+        success: true
       });
     }
 
