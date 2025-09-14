@@ -1,0 +1,253 @@
+@import "tailwindcss";
+.navbar {
+    background-color: purple;
+    width: 100%;
+    height: 100px;
+}
+
+.login-form {
+    background-color: #FFBF34;
+}
+
+.login-title {
+    color: white;
+    font-weight: 900;
+    font-size: 3vw;
+}
+
+.login-con {
+    background-color: purple;
+    border-radius: 12px;
+}
+
+.login-font {
+    color: white;
+}
+
+.btn-font {
+    color: purple;
+}
+
+.login-btn {
+    background-color: #FFBF34;
+    transition: 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+    transform: scale(1.1);
+}
+
+.navbar-menu {
+    background-color: purple;
+    margin-left: 100px;
+}
+
+.nav-btn {
+    background-color: #FFBF34;
+    border: none;
+    color: white;
+}
+
+.logo-name {
+    color: rgb(255, 255, 255);
+}
+
+.nav-search {
+    margin-left: 100px;
+    background-color: black;
+    width: 15vw;
+}
+
+.search-btn {
+    background-color: purple;
+}
+
+.navbar-menu ul li a {
+    color: white;
+}
+
+.navbar-menu ul li a:hover {
+    color: #FFBF34;
+}
+
+.container-1 {
+    height: 700px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f2f2f2;
+    background-image: url(./assets/main02.avif);
+}
+
+.heading h1 {
+    font-size: 12vw;
+    font-weight: 900;
+    text-decoration: underline;
+    margin-left: 52px;
+    color: white;
+}
+
+.heading p {
+    width: 700px;
+    margin-left: 59px;
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: white;
+}
+
+.main-btn {
+    margin-left: 59px;
+    margin-top: 20px;
+    background-color: purple;
+    color: white;
+    font-weight: 700;
+    transition: 0.5s ease-in;
+}
+
+.main-btn:hover {
+    transform: scale(1.1);
+}
+
+.productlist {
+    background-color: purple;
+    height: 1100px;
+}
+
+.productlist section {
+    background-color: #FFBF34;
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 30px;
+    border-radius: 12px;
+}
+
+.productlist section h2 {
+    color: white;
+}
+
+.productlist section .categories-grid a {
+    background-color: purple;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.productlist section .categories-grid a:hover {
+    transform: scale(1.1);
+}
+
+.productlist section .categories-grid a span {
+    color: white;
+}
+
+.productlist section .categories-grid svg {
+    color: white;
+}
+
+.productlist section a {
+    color: white;
+}
+
+.g1 {
+    background-color: white;
+    height: 200px;
+    border-radius: 12px;
+}
+
+.g1 img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.rating-box {
+    background-color: purple;
+    height: 900px;
+    padding: 20px;
+}
+
+.blockquote-con {
+    margin-top: 20px;
+    color: white;
+}
+
+.blockquote-con p {
+    font-size: 3vw;
+}
+
+.blog-sec {
+    margin-top: 50px;
+    background-color: #FFBF34;
+    border-radius: 12px;
+}
+
+.blog-title {
+    color: white;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.blog-p {
+    color: white;
+    font-weight: 700;
+}
+
+.blog-grid article {
+    background-color: purple;
+    border-radius: 12px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.blog-grid article:hover {
+    transform: scale(1.1);
+}
+
+.blog-grid article h2 {
+    color: white;
+}
+
+.blog-grid article p {
+    color: white;
+}
+
+.blog-grid article span {
+    color: white;
+}
+
+.blog-grid article a {
+    color: white;
+}
+
+.about-con {
+    padding: 10px;
+    height: 1000px;
+    background-color: purple;
+}
+
+.about-con section {
+    background-color: #FFBF34;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.about-con .about-font {
+    color: white;
+    font-weight: 900;
+}
+
+.about-con .about-btn {
+    background-color: #FFBF34;
+}
+
+.about-form {
+    transition: 0.2s ease-in-out;
+    background-color: purple;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.about-form:hover {
+    transform: scale(1.1);
+}
