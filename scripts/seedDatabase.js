@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 const User = require('../models/User');
@@ -108,11 +107,10 @@ const seedDatabase = async () => {
     console.log('🗑️ Cleared existing data');
 
     // Create admin user
-    const adminPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'admin123', 12);
     const adminUser = new User({
       name: 'Admin User',
       email: process.env.ADMIN_EMAIL || 'admin@snapit.com',
-      password: adminPassword,
+      password: process.env.ADMIN_PASSWORD || 'admin123', // Pass plain text password
       role: 'admin',
       isActive: true
     });
@@ -121,11 +119,10 @@ const seedDatabase = async () => {
     console.log('👤 Created admin user');
 
     // Create sample user
-    const userPassword = await bcrypt.hash('user123', 12);
     const sampleUser = new User({
       name: 'John Doe',
       email: 'user@example.com',
-      password: userPassword,
+      password: 'user123', // Pass plain text password
       phone: '+1-555-0123',
       address: {
         street: '123 Main St',
