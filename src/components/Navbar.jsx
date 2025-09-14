@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-primary fixed w-full z-20 top-0 start-0 border-b border-purple-700 shadow-lg">
+    <nav className="bg-primary fixed w-full z-20 top-0 start-0 border-b border-primary-dark shadow-lg">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-2xl font-black whitespace-nowrap text-secondary">Snap It</span>
@@ -25,12 +25,12 @@ function Navbar() {
               {user.role === 'admin' && (
                 <button onClick={() => navigate('/admin/dashboard')} type="button" className="text-primary bg-white hover:bg-gray-200 font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Admin Panel</button>
               )}
-              <button onClick={handleLogout} type="button" className="text-primary bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Logout</button>
+              <button onClick={handleLogout} type="button" className="text-deep-purple bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Logout</button>
             </>
           ) : (
             <>
-              <button onClick={() => navigate('/login')} type="button" className="text-white hover:bg-purple-800 font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors">Sign in</button>
-              <button onClick={() => navigate('/signup')} type="button" className="text-primary bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Register</button>
+              <button onClick={() => navigate('/login')} type="button" className="text-white hover:bg-primary-dark font-medium rounded-lg text-sm px-4 py-2 text-center transition-colors">Sign in</button>
+              <button onClick={() => navigate('/signup')} type="button" className="text-deep-purple bg-secondary hover:bg-secondary-hover font-bold rounded-lg text-sm px-4 py-2 text-center transition-colors">Register</button>
             </>
           )}
         </div>

@@ -19,7 +19,7 @@ body {
 
 /* Admin Panel Styles */
 .admin-layout {
-  @apply flex min-h-screen bg-purple-900;
+  @apply flex min-h-screen bg-deep-purple;
 }
 
 .admin-sidebar {
@@ -35,11 +35,11 @@ body {
 }
 
 .admin-nav a {
-  @apply px-4 py-2 rounded-lg transition-colors duration-200 text-white/80 hover:bg-secondary hover:text-primary font-semibold;
+  @apply px-4 py-2 rounded-lg transition-colors duration-200 text-white/80 hover:bg-secondary hover:text-deep-purple font-semibold;
 }
 
 .admin-nav a.active {
-   @apply bg-secondary text-primary;
+   @apply bg-secondary text-deep-purple;
 }
 
 .admin-user-info {
@@ -47,7 +47,7 @@ body {
 }
 
 .admin-logout-btn {
-  @apply bg-secondary text-primary border-none px-4 py-2 rounded-lg mt-2 cursor-pointer w-full font-bold transition-transform hover:scale-105;
+  @apply bg-secondary text-primary-dark border-none px-4 py-2 rounded-lg mt-2 cursor-pointer w-full font-bold transition-transform hover:scale-105;
 }
 
 .admin-main-content {

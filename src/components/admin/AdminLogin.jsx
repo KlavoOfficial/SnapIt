@@ -25,11 +25,11 @@ function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center p-4">
+    <div className="min-h-screen bg-deep-purple text-white flex flex-col justify-center items-center p-4">
       <div className="text-center mb-8">
         <h1 className="text-5xl font-bold text-secondary">Snap It Admin</h1>
       </div>
-      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
+      <div className="w-full max-w-md bg-primary-dark rounded-lg shadow-lg p-8">
         <h2 className="text-2xl font-bold mb-6 text-center">Admin Sign In</h2>
         
         {error && 
@@ -40,7 +40,7 @@ function AdminLogin() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="loginIdentifier" className="block text-sm font-medium text-gray-400 mb-2">Username or Email</label>
+            <label htmlFor="loginIdentifier" className="block text-sm font-medium text-gray-300 mb-2">Username or Email</label>
             <input
               id="loginIdentifier"
               name="loginIdentifier"
@@ -48,12 +48,12 @@ function AdminLogin() {
               value={loginIdentifier}
               onChange={(e) => setLoginIdentifier(e.target.value)}
               required
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
+              className="w-full px-4 py-2 bg-primary border border-primary text-white rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
               placeholder="admin"
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-400 mb-2">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">Password</label>
             <input
               id="password"
               name="password"
@@ -61,14 +61,14 @@ function AdminLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
+              className="w-full px-4 py-2 bg-primary border border-primary text-white rounded-md focus:outline-none focus:ring-2 focus:ring-secondary transition"
               placeholder="••••••••"
             />
           </div>
           <div>
             <button
               type="submit"
-              className="w-full bg-secondary text-primary font-bold py-2.5 px-4 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-secondary transition-colors duration-200"
+              className="w-full bg-secondary text-deep-purple font-bold py-2.5 px-4 rounded-md hover:bg-secondary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-dark focus:ring-secondary transition-colors duration-200"
             >
               Sign in
             </button>

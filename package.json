@@ -34,6 +34,7 @@
     "express-validator": "^7.2.2",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.378.0",
     "mongoose": "^8.8.4",
     "morgan": "^1.10.0",
     "react": "^18.2.0",

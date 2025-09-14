@@ -29,7 +29,7 @@ function About() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map((feature, index) => (
-            <div key={index} className="bg-purple-800 p-8 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+            <div key={index} className="bg-primary-dark p-8 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
               <div className="flex justify-center items-center h-20 w-20 rounded-full bg-primary mx-auto mb-6">
                 {feature.icon}
               </div>
