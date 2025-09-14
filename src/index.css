@@ -42,27 +42,17 @@
 
 .navbar-menu {
     background-color: purple;
-    margin-left: 100px;
 }
 
 .nav-btn {
     background-color: #FFBF34;
     border: none;
     color: white;
+    border-radius: 8px;
 }
 
 .logo-name {
     color: rgb(255, 255, 255);
-}
-
-.nav-search {
-    margin-left: 100px;
-    background-color: black;
-    width: 15vw;
-}
-
-.search-btn {
-    background-color: purple;
 }
 
 .navbar-menu ul li a {
@@ -254,3 +244,102 @@
 .about-form:hover {
     transform: scale(1.1);
 }
+
+/* Admin Panel Styles */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #4c1d95; /* Deeper purple */
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: purple;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.admin-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-nav a {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.admin-nav a:hover, .admin-nav a.active {
+  background-color: #FFBF34;
+  color: purple;
+}
+
+.admin-user-info {
+  margin-top: auto;
+  text-align: center;
+}
+
+.admin-logout-btn {
+  background-color: #FFBF34;
+  color: purple;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.admin-main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.admin-stat-card {
+  background-color: purple;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.admin-card {
+  background-color: purple;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.admin-th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #FFBF34;
+}
+
+.admin-td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #6b21a8;
+}
+
+.admin-tr:last-child .admin-td {
+  border-bottom: none;
+}
+
+.status-pending { background-color: #f59e0b; color: white; }
+.status-confirmed { background-color: #10b981; color: white; }
+.status-shipped { background-color: #3b82f6; color: white; }
+.status-delivered { background-color: #84cc16; color: white; }
+.status-cancelled { background-color: #ef4444; color: white; }
