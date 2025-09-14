@@ -109,6 +109,7 @@ const seedDatabase = async () => {
     // Create admin user
     const adminUser = new User({
       name: 'Admin User',
+      username: 'admin',
       email: process.env.ADMIN_EMAIL || 'admin@snapit.com',
       password: process.env.ADMIN_PASSWORD || 'admin123', // Pass plain text password
       role: 'admin',
@@ -121,6 +122,7 @@ const seedDatabase = async () => {
     // Create sample user
     const sampleUser = new User({
       name: 'John Doe',
+      username: 'johndoe',
       email: 'user@example.com',
       password: 'user123', // Pass plain text password
       phone: '+1-555-0123',
@@ -147,10 +149,11 @@ const seedDatabase = async () => {
     console.log('✅ Database seeding completed!');
     console.log(`
 📋 Admin Credentials:
-Email: ${process.env.ADMIN_EMAIL || 'admin@snapit.com'}
+Username: admin
 Password: ${process.env.ADMIN_PASSWORD || 'admin123'}
 
 📋 Sample User Credentials:
+Username: johndoe
 Email: user@example.com
 Password: user123
     `);

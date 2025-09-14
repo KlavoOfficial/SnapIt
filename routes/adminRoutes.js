@@ -17,8 +17,8 @@ const {
 } = require('../controllers/adminController');
 
 // All admin routes require authentication and admin role
-//router.use(authenticate);
-//router.use(requireAdmin);
+router.use(authenticate);
+router.use(requireAdmin);
 
 // Dashboard
 router.get('/dashboard', getDashboardStats);

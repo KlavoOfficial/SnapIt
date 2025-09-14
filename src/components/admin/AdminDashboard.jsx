@@ -13,12 +13,12 @@ function AdminDashboard() {
         if (response.success) {
           setStats(response.data);
         } else {
-          setStats(response.data);
+          setError('Failed to load dashboard data.');
         }
       } catch (err) {
         setError(err.message || 'An error occurred.');
       } finally {
-       setStats(response.data);
+        setLoading(false);
       }
     };
 
@@ -30,7 +30,7 @@ function AdminDashboard() {
   }
 
   if (error) {
-     return <div className="text-white">Loading Dashboard...</div>;
+    return <div className="text-red-500">{error}</div>;
   }
 
   return (

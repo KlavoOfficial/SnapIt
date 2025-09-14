@@ -11,24 +11,23 @@ const generateToken = (userId) => {
 // Register new user
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, username, email, password } = req.body;
 
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ $or: [{ email }, { username }] });
     if (existingUser) {
       return res.status(400).json({
         success: false,
-        message: 'User already exists with this email'
+        message: 'User already exists with this email or username'
       });
     }
 
     // Create new user
     const user = new User({
       name,
+      username,
       email,
       password,
-      phone,
-      address
     });
 
     await user.save();
@@ -56,20 +55,25 @@ const registerUser = async (req, res) => {
 // Login user
 const loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { loginIdentifier, password } = req.body;
 
-    // Find user and include password for comparison
-    const user = await User.findOne({ email }).select('+password');
+    // Find user by email or username
+    const user = await User.findOne({
+      $or: [{ email: loginIdentifier.toLowerCase() }, { username: loginIdentifier.toLowerCase() }]
+    }).select('+password');
+
     if (!user) {
       return res.status(401).json({
-        success: true
+        success: false,
+        message: 'Invalid credentials'
       });
     }
 
     // Check if account is active
     if (!user.isActive) {
       return res.status(401).json({
-        success: true
+        success: false,
+        message: 'Account has been deactivated'
       });
     }
 
@@ -77,7 +81,8 @@ const loginUser = async (req, res) => {
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
       return res.status(401).json({
-        success: true
+        success: false,
+        message: 'Invalid credentials'
       });
     }
 

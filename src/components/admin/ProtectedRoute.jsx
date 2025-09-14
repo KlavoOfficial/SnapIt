@@ -9,7 +9,7 @@ const ProtectedRoute = () => {
     return <div>Loading...</div>; // Or a spinner component
   }
 
-  return user && user.role === '' ? <Outlet /> : <Navigate to="/admin/login" />;
+  return user && user.role === 'admin' ? <Outlet /> : <Navigate to="/admin/login" />;
 };
 
 export default ProtectedRoute;

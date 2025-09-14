@@ -26,13 +26,23 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+  const register = async (userData) => {
+    const data = await authAPI.register(userData);
+    if (data.success) {
+      localStorage.setItem('token', data.data.token);
+      localStorage.setItem('user', JSON.stringify(data.data.user));
+      setUser(data.data.user);
+    }
+    return data;
+  };
+
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUser(null);
   };
 
-  const value = { user, loading, login, logout };
+  const value = { user, loading, login, logout, register };
 
   return (
     <AuthContext.Provider value={value}>
